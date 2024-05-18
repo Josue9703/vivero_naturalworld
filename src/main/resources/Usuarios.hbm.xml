@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.edu.udb.www.vivero_naturalworld.entities.Usuarios" table="usuarios" schema="vivero_naturalworld">
+        <id name="idUsuario">
+            <column name="id_usuario" sql-type="varchar(50)" length="50"/>
+        </id>
+        <property name="nombreUsuario">
+            <column name="nombre_usuario" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="contraseña">
+            <column name="contraseña" sql-type="varchar(50)" length="50"/>
+        </property>
+        <many-to-one name="rolByIdRol" class="sv.edu.udb.www.vivero_naturalworld.entities.Rol">
+            <column name="id_rol"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

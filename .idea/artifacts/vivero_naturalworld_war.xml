@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vivero_naturalworld:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vivero_naturalworld</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="vivero_naturalworld-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="vivero_naturalworld:war exploded" />
+    </root>
+  </artifact>
+</component>

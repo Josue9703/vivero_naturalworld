@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.edu.udb.www.vivero_naturalworld.entities.Ventas" table="ventas" schema="vivero_naturalworld">
+        <id name="idVenta">
+            <column name="id_venta" sql-type="varchar(50)" length="50"/>
+        </id>
+        <property name="fechaVenta">
+            <column name="fecha_venta" sql-type="datetime"/>
+        </property>
+        <property name="totalVenta">
+            <column name="total_venta" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="metodoPago">
+            <column name="metodo_pago" sql-type="varchar(50)" length="50"/>
+        </property>
+        <many-to-one name="usuariosByIdUsuario" class="sv.edu.udb.www.vivero_naturalworld.entities.Usuarios">
+            <column name="id_usuario"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

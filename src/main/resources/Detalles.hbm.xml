@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.edu.udb.www.vivero_naturalworld.entities.Detalles" table="detalles" schema="vivero_naturalworld">
+        <id name="idDetalles">
+            <column name="id_detalles" sql-type="varchar(50)" length="50"/>
+        </id>
+        <property name="cantidad">
+            <column name="cantidad" sql-type="int"/>
+        </property>
+        <property name="precioUnitario">
+            <column name="precio_unitario" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="total">
+            <column name="Total" sql-type="decimal(10,2)" precision="10" scale="2"/>
+        </property>
+        <many-to-one name="ventasByIdVenta" class="sv.edu.udb.www.vivero_naturalworld.entities.Ventas">
+            <column name="id_venta"/>
+        </many-to-one>
+        <many-to-one name="productosByIdProducto" class="sv.edu.udb.www.vivero_naturalworld.entities.Productos">
+            <column name="id_producto"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
